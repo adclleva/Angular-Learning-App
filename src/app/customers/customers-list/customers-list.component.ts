@@ -7,10 +7,10 @@ import { ICustomer } from '../../shared/interfaces'
   templateUrl: './customers-list.component.html'
 })
 export class CustomersListComponent implements OnInit {
-  
+
   filteredCustomers: ICustomer[] = []; // this will be an empty array from the start
   customersOrderTotal: number; // we'll get this dynamicall
-  currencyCode: string = 'USD'; // this will be a pipe 
+  currencyCode: string = 'USD'; // this will be a pipe
 
   constructor() { }
 
@@ -22,9 +22,8 @@ export class CustomersListComponent implements OnInit {
     this.customersOrderTotal = 0;
     this.filteredCustomers.forEach((customer: ICustomer) => {
       this.customersOrderTotal += customer.orderTotal;
-    })
+    });
   }
 
 
 }
- 
