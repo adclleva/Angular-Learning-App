@@ -28,7 +28,7 @@ export class CustomersListComponent implements OnInit {
 
   filteredCustomers: ICustomer[] = []; // this will be an empty array from the start
   customersOrderTotal: number; // we'll get this dynamicall
-  currencyCode: string = 'USD'; // this will be a pipe
+  currencyCode: string = 'USD'; // this will be a pipe to make things dynamic
 
   constructor() { }
 
@@ -48,7 +48,20 @@ export class CustomersListComponent implements OnInit {
     });
   }
 
-  sort(prop: string) {
+  filter(data: string) {
+    if (data) {
+      this.filteredCustomers = this.customers.filter((customer: ICustomer) => {
+        return customer.name.toLowerCase().indexOf(data.toLowerCase()) > -1 ||
+               customer.city.toLowerCase().indexOf(data.toLowerCase()) > -1 ||
+               customer.orderTotal.toString().indexOf(data) > -1;
+      })
+    } else {
+      this.filteredCustomers = this.customers;
+    }
+    this.calculateOrders();
+  }
+
+  sort(prop:  string) {
     // A sorter service will handle the sorting
   }
 }
