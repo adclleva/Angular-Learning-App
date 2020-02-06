@@ -25,5 +25,7 @@ export class CustomersListComponent implements OnInit {
     });
   }
 
-
+  sort(prop: string) {
+    // A sorter service will handle the sorting
+  }
 }
