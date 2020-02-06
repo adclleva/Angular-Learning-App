@@ -3,5 +3,7 @@
       <h1 [innerHTML]="title"></h1>-->
 <h1>{{ title }}</h1>
 
-
-<app-customers-list></app-customers-list>
+<!-- the customers is the input property that we just created within the customers list
+      we are getting the data from the parent, in this case the people property, and have it passed
+      down into the child component which is the app-customers-list by using the input property-->
+<app-customers-list [customers]="people"></app-customers-list>

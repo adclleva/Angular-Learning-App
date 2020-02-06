@@ -9,19 +9,20 @@ import { ICustomer } from '../../shared/interfaces'
 export class CustomersListComponent implements OnInit {
   // @Input() customers: any[]
   // this is basically a private variable that is a type ICustomer from the interface
-  
   private _customers: ICustomer[] = [];
   
   // the use of getters and setters
   // customers of type ICustomer which is an array
+  // we can put the input decorator on either the get or set, it doesnt matter
   @Input() get customers(): ICustomer[] {
     return this._customers;
   }
 
-  set customers(Value: ICustomer[]) {
+  set customers(value: ICustomer[]) {
     if (value) {
-      this.fileredCustomers = this._custeroms = value;
-      this.calculateOrders
+      // this value can be assigned to both the customers and the filteredCustomers
+      this.filteredCustomers = this._customers = value;
+      this.calculateOrders()
     }
   }
 
