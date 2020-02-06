@@ -5,7 +5,6 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   template: `
-    <h1> title </h1>
     <app-customers></app-customers>
   `
 
