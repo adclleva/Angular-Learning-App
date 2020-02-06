@@ -19,3 +19,4 @@ export interface IOrderItem {
 
 /* interfaces are a typescript feature 
   interfaces have an I in front of them */
+/* these help us for better compiler support */
