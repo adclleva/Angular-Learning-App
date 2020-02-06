@@ -8,6 +8,6 @@ import { CustomersComponent } from './customers.component'
   imports: [
     CommonModule
   ],
-  exports: [ CustomersComponent ]
+  exports: [ CustomersComponent ] // whenever we import this module we also get the customers component
 })
 export class CustomersModule { }
