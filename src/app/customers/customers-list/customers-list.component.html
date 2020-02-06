@@ -16,11 +16,12 @@
   <tr *ngFor="let customer of filteredCustomers">
     <td>
       <a>
-        {{ customer.name }}
+        <!-- A pipe takes in data as input and transforms it to a desired output -->
+        {{ customer.name | capitalize }}
       </a>
     </td>
     <td>{{ customer.city }}</td>
-    <td>{{ customer.orderTotal }}</td>
+    <td>{{ customer.orderTotal | currency:currencyCode:'symbol' }}</td>
   </tr>
   <!-- this will only affect the html element and the children inside 
       in this case, only if there are filterCustomers, it will render the element-->
@@ -28,7 +29,8 @@
     <!-- this is basically a non breaking space-->
     <td colspan="2">&nbsp;</td>
     <td>
-      {{ customersOrderTotal }}
+      <!-- we can pipe and use the currency transform fuction-->
+      {{ customersOrderTotal | currency:currencyCode:'symbol'  }}
     </td>
   </tr>
 
