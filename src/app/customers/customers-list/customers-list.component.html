@@ -10,14 +10,15 @@
       <th>Order Total</th>
     </tr>
   </thead>
-  <tr>
+  <!-- this is a structual directive with the * because it'll change the structure of the DOM-->
+  <tr *ngFor="let customer of filteredCustomers">
     <td>
       <a>
-
+        {{customer.name}}
       </a>
     </td>
-    <td></td>
-    <td></td>
+    <td>{{ customer.city}}</td>
+    <td>{{ customer.orderTotal}}</td>
   </tr>
   <tr>
     <td colspan="2">&nbsp;</td>

@@ -2,6 +2,7 @@ export interface ICustomer {
   id: number;
   name: string;
   city: string;
+  // the question mark means that it is optional
   orderTotal?: number;
   customerSince: any;
 }

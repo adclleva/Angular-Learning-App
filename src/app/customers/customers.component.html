@@ -1,7 +1,7 @@
 <!-- this title is coming from the ngOnInit this.title  from the customers component -->
 <!-- we can also bind values into the html to get the same result
       <h1 [innerHTML]="title"></h1>-->
-<h1 [hidden]="!isVisible">{{ title }}</h1>
-<button (click)="changeVisibility()">Show/Hide Title</button>
+<h1>{{ title }}</h1>
+
 
 <app-customers-list></app-customers-list>
